@@ -1,0 +1,86 @@
+[
+  {
+    "id": "q1",
+    "question": "Two Sum Problem",
+    "difficulty": "Easy",
+    "status": "Completed",
+    "category": "DSA"
+  },
+  {
+    "id": "q2",
+    "question": "Longest Substring Without Repeating Characters",
+    "difficulty": "Medium",
+    "status": "In Progress",
+    "category": "DSA"
+  },
+  {
+    "id": "q3",
+    "question": "Trapping Rain Water",
+    "difficulty": "Hard",
+    "status": "Pending",
+    "category": "DSA"
+  },
+  {
+    "id": "q4",
+    "question": "Explain Event Loop, Microtasks & Macrotasks in JavaScript",
+    "difficulty": "Medium",
+    "status": "Completed",
+    "category": "Interview Questions"
+  },
+  {
+    "id": "q5",
+    "question": "Virtual DOM vs Real DOM and React Fiber Architecture",
+    "difficulty": "Easy",
+    "status": "In Progress",
+    "category": "Interview Questions"
+  },
+  {
+    "id": "q6",
+    "question": "JavaScript Closures and Practical Real-world Use Cases",
+    "difficulty": "Easy",
+    "status": "Completed",
+    "category": "Interview Questions"
+  },
+  {
+    "id": "q7",
+    "question": "Difference between Git Merge and Git Rebase",
+    "difficulty": "Easy",
+    "status": "Completed",
+    "category": "Git Questions"
+  },
+  {
+    "id": "q8",
+    "question": "How to Undo the Last Commit Without Losing Changes (git reset --soft)",
+    "difficulty": "Easy",
+    "status": "In Progress",
+    "category": "Git Questions"
+  },
+  {
+    "id": "q9",
+    "question": "Resolving Merge Conflicts in Team Git Workflow",
+    "difficulty": "Medium",
+    "status": "Pending",
+    "category": "Git Questions"
+  },
+  {
+    "id": "q10",
+    "question": "Build an Autocomplete / Search Bar with Debouncing",
+    "difficulty": "Medium",
+    "status": "In Progress",
+    "category": "Machine Coding"
+  },
+  {
+    "id": "q11",
+    "question": "Build an Infinite Scroll List using Intersection Observer API",
+    "difficulty": "Hard",
+    "status": "Pending",
+    "category": "Machine Coding"
+  },
+  {
+    "id": "q12",
+    "question": "Build a Multi-step Form Wizard with Field Validations",
+    "difficulty": "Medium",
+    "status": "Completed",
+    "category": "Machine Coding"
+  }
+]

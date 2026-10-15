@@ -4,15 +4,19 @@ A structured breakdown of features, views, and step-by-step implementation for t
 
 ---
 
-## Page Architecture & Views
+## Page Architecture & Layout
 
-The application is structured into 3 core views / tabs for a clean, modular, and focused user experience:
+The application consists of a persistent top header and a dedicated navigation sidebar with 2 core views:
 
 ```
-[ Navigation / Sidebar ]
-  |-- Dashboard (Overview, Analytics & Metrics)
-  |-- Manage Questions (CRUD, Search, Filter, Status toggles)
-  \-- Settings (Theme, Data Reset & Backup)
+[ Top Header / Navbar ]
+  |-- Left: Brand Logo & Title (Montserrat font) + Mobile Menu Trigger
+  \-- Right: Dark / Light Mode Switcher
+
+[ Left Sidebar Navigation ]
+  |-- View 1: Dashboard (Overview, Analytics & Metrics)
+  |-- View 2: Manage Questions (CRUD, Search, Multi-Filter, Status Toggles)
+  \-- Actions: Reset All Data ("Fresh Start") & Load Sample Questions
 ```
 
 ---
@@ -40,14 +44,16 @@ The Dashboard provides a high-level view of weekly preparation progress and stat
 
 The operational hub where the student tracks, searches, and updates question progress.
 
-### A. Top Control Bar (Search & Filter)
+### A. Top Control Bar (Search, Filter & Actions)
 * Real-time Search Bar: Instant search by question title or topic.
 * Category Filter: Filter by All, DSA, Git, Technical.
 * Difficulty Filter: Filter by All, Easy, Medium, Hard.
 * Status Filter: Filter by All, Pending, In Progress, Completed.
 * Reset Filters Button: One-click clear for all active filters.
+* Quick Data Controls: "Fresh Start" (Reset all with confirmation) and "Load Sample Data".
 
 ### B. Add Question Form / Modal
+* Built with React Hook Form + Toast notifications.
 * Fields:
   * Question Title (Text input, required)
   * Category (Dropdown: DSA / Git / Technical)
@@ -63,20 +69,7 @@ The operational hub where the student tracks, searches, and updates question pro
 
 ---
 
-## 3. View 3: Settings & Preferences
-
-User preferences and storage controls for a personalized experience.
-
-### Key Features:
-* Theme Management:
-  * Toggle between Dark Mode and Light Mode (persisted in LocalStorage).
-* Data Management:
-  * Reset Data ("Fresh Start"): Clears all stored questions and resets to fresh state (with confirmation dialog).
-  * Load Sample Data: One-click button to load pre-populated dummy interview questions for demo purposes.
-
----
-
-## 4. Core Capabilities & Edge Cases
+## 3. Core Capabilities & Edge Cases
 
 * Local Persistence:
   * All question data, filter states, and theme preferences persist in browser LocalStorage.
@@ -84,35 +77,37 @@ User preferences and storage controls for a personalized experience.
   * Empty State: Friendly message and "Add your first question" button when no questions exist.
   * No Search Results: "No questions found matching your filters" with a "Clear Filters" button.
 * Responsive Layout:
-  * Fully fluid responsive design (Mobile navbar/tabs, desktop clean grid).
+  * Header with mobile drawer toggle.
+  * Sidebar transitions into an overlay drawer on mobile screens.
 * Visual Polish:
-  * Clear category and difficulty tags.
+  * Clear color-coded category and difficulty tags.
   * Smooth transitions and hover states.
+  * Centralized CSS variables for easy future color theme customization.
 
 ---
 
 ## Step-by-Step Implementation Roadmap
 
-1. Phase 1: Project Setup & Design System
+1. Phase 1: Project Setup & Design System (Done)
    * Setup React with Vite.
-   * Define CSS variables (Color palette, dark/light theme tokens, typography).
-   * Create navigation layout (Sidebar / Top Navbar for 3 views).
+   * Centralized color palette in index.css and tailwind.config.js.
+   * Brand Logo with Montserrat font and Dark/Light theme toggle in Navbar.
+   * Responsive Sidebar navigation.
 
 2. Phase 2: State Management & LocalStorage Hook
-   * Implement custom useLocalStorage hook for questions and theme.
+   * Implement custom useQuestions hook for LocalStorage persistence.
    * Add initial dummy data seed utility.
 
 3. Phase 3: Manage Questions Page (CRUD + Search/Filter)
-   * Build Question Form with validation.
+   * Build Question Form with React Hook Form & validation.
    * Build Question Card/Table list with quick status toggle and delete.
    * Build real-time search and multi-filtering logic.
    * Implement Empty & No-Results states.
 
 4. Phase 4: Dashboard Page
-   * Compute aggregate metrics dynamically from state.
+   * Compute aggregate metrics dynamically from questions state.
    * Build metric counter cards and visual progress bars.
 
-5. Phase 5: Settings Page & Polish
-   * Wire theme toggle and fresh-start data reset.
-   * Add sample data loader button.
-   * Responsive testing (Desktop + Mobile) and README finalization.
+5. Phase 5: Polish & Deliverables
+   * Responsive testing across desktop and mobile.
+   * Finalize README with features, setup steps, and assumptions for evaluation.

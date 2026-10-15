@@ -1,7 +1,22 @@
+import { useState, useEffect } from "react";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
+import { Toaster, toast } from "react-hot-toast";
+import AppRoutes from "./routes/Routes";
+
 function App() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-6 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100">
-      <h1>Practice Tracker</h1>
+    <div className="min-h-screen bg-surface-app text-content-primary flex flex-col font-sans transition-colors duration-200">
+      <Toaster position="top-right" />
+      <Navbar />
+
+      <div className="flex-1 flex">
+        <Sidebar />
+
+        <main className="flex-1 lg:pl-64 transition-all duration-300 px-4 py-2">
+          <AppRoutes />
+        </main>
+      </div>
     </div>
   );
 }
