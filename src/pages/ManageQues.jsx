@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Plus, LayoutGrid, List } from "lucide-react";
 import QuestionList from "../components/QuestionList";
 import AddQuestionsForm from "../components/AddQuestionsForm";
@@ -7,7 +7,14 @@ import SearchFilterBar from "../components/SearchFilterBar";
 import useQuestionFilters from "../hooks/useQuestionFilters";
 import useQuestion from "../hooks/useQuestion";
 const ManageQues = () => {
-  const [gridStyle, setGridStyle] = useState(false);
+  const [gridStyle, setGridStyle] = useState(() => {
+    const saved = localStorage.getItem("gridStyle");
+    return saved !== null ? JSON.parse(saved) : false;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("gridStyle", JSON.stringify(gridStyle));
+  }, [gridStyle]);
 
   const {
     searchTerm,
@@ -21,8 +28,7 @@ const ManageQues = () => {
     setSelectedStatus,
   } = useQuestionFilters();
 
-  const { isModalOpen, handleAddQuesForm, handleModalClose } =
-    useQuestion();
+  const { isModalOpen, handleAddQuesForm, handleModalClose } = useQuestion();
 
   return (
     <div className="w-full space-y-6 px-2">

@@ -1,18 +1,10 @@
 import React from "react";
-import {
-  CheckSquare,
-  Sun,
-  Moon,
-  Menu,
- 
-} from "lucide-react";
+import { CheckSquare, Sun, Moon, Menu } from "lucide-react";
+import useTheme from "../hooks/useTheme";
 
-const Navbar = ({
-  isDark = false,
-  toggleTheme = () => {},
-  onToggleSidebar = () => {},
-}) => {
-
+const Navbar = ({ onToggleSidebar = () => {} }) => {
+  const { theme, toggleTheme } = useTheme();
+  console.log("theme is", theme);
 
   return (
     <header className="sticky top-0 z-30 w-full backdrop-blur-md bg-surface-card/80 border-b border-borderline transition-colors">
@@ -54,7 +46,7 @@ const Navbar = ({
               aria-label="Toggle theme"
               className="p-2 sm:p-2.5 rounded-xl border border-borderline bg-surface-card hover:bg-surface-muted text-content-secondary hover:text-content-primary transition-all shadow-sm cursor-pointer flex items-center gap-2"
             >
-              {isDark ? (
+              {theme === "dark" ? (
                 <Sun className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" />
               ) : (
                 <Moon className="w-4 h-4 sm:w-5 sm:h-5 text-slate-600" />

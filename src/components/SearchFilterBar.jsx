@@ -31,7 +31,7 @@ const SearchFilterBar = ({
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search questions by title or keyword..."
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-surface-muted/50 border border-borderline text-content-primary placeholder:text-content-muted text-sm focus:outline-none focus:ring-2 focus:ring-brand/40 focus:border-brand transition-all"
+            className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-surface-muted border border-borderline text-content-primary placeholder:text-content-muted text-sm focus:outline-none focus:ring-2 focus:ring-brand/40 focus:border-brand transition-all"
           />
         </div>
 

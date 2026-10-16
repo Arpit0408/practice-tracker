@@ -165,7 +165,7 @@ const AddQuestionsForm = ({ onclose, updateid }) => {
                 },
               })}
               placeholder="e.g., Reverse Linked List, Implement Debounce, Event Loop..."
-              className="w-full px-4 py-2.5 rounded-xl bg-surface-muted/50 border border-borderline text-content-primary placeholder:text-content-muted text-sm focus:outline-none focus:ring-2 focus:ring-brand/40 focus:border-brand transition-all"
+              className="w-full px-4 py-2.5 rounded-xl bg-surface-muted border border-borderline text-content-primary placeholder:text-content-muted text-sm focus:outline-none focus:ring-2 focus:ring-brand/40 focus:border-brand transition-all"
             />
             {errors.title && (
               <p className="text-rose-500 text-xs font-medium">

@@ -41,7 +41,7 @@ const Dashboard = () => {
       {/* ================= Header Banner ================= */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-2 border-b border-borderline">
         <div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 py-2">
             <span className="p-1.5 rounded-lg bg-brand-light text-brand">
               <Zap className="w-5 h-5 fill-brand/20" />
             </span>
@@ -49,17 +49,12 @@ const Dashboard = () => {
               Interview Dashboard
             </h1>
           </div>
-          <p className="text-xs sm:text-sm text-content-secondary mt-1 ml-9">
-            Real-time tracking of DSA, Technical Interviews, Git & Machine
-            Coding prep.
-          </p>
         </div>
 
         <Link
           to="/manage-ques"
           className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand hover:bg-brand-hover active:scale-95 text-white text-xs sm:text-sm font-medium shadow-md shadow-brand/20 transition-all cursor-pointer self-start sm:self-auto"
         >
-          <Plus className="w-4 h-4 stroke-[2.5]" />
           <span>Manage Questions</span>
         </Link>
       </div>

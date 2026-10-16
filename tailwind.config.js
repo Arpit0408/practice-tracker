@@ -18,9 +18,9 @@ export default {
           light: 'rgb(var(--primary-light-rgb) / <alpha-value>)',
         },
         surface: {
-          app: 'var(--bg-app)',
-          card: 'var(--bg-card)',
-          muted: 'var(--bg-muted)',
+          app: 'rgb(var(--bg-app-rgb) / <alpha-value>)',
+          card: 'rgb(var(--bg-card-rgb) / <alpha-value>)',
+          muted: 'rgb(var(--bg-muted-rgb) / <alpha-value>)',
         },
         borderline: {
           DEFAULT: 'var(--border-color)',

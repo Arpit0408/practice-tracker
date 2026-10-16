@@ -36,7 +36,7 @@ const CustomSelect = ({
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className={`w-full px-3.5 py-2.5 rounded-xl bg-surface-muted/50 border text-left flex items-center justify-between text-sm transition-all cursor-pointer ${
+        className={`w-full px-3.5 py-2.5 rounded-xl bg-surface-muted border text-left flex items-center justify-between text-sm transition-all cursor-pointer ${
           isOpen
             ? "border-brand ring-2 ring-brand/30 bg-surface-card"
             : "border-borderline hover:border-brand/40"
